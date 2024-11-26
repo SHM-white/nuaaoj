@@ -19,22 +19,25 @@ void swap(int *arg1, int *arg2){
 }
 int main()
 {
-    int m, n;
-    scanf("%d %d", &n, &m);
+    int n;
+    scanf("%d", &n);
     int *nums = calloc(n, sizeof(int));
     for (size_t i = 0; i < n; i++)
     {
         scanf("%d", &nums[i]);
     }
-    for (size_t i = 0; i < m; i++)
+    for (size_t i = 1; i < n; i++)
     {
-        int t1, t2;
-        scanf("%d %d", &t1, &t2);
-        swap(nums + t1 - 1, nums + t2 - 1);
+        for (size_t j = 0; j < n - i; j++)
+        {
+            if (nums[j] > nums[j + 1]){
+                swap(nums + j, nums + j + 1);
+            }
+        }
     }
     for (size_t i = 0; i < n; i++)
     {
-        printf("%d\n", nums[i]);
+        printf("%d ", nums[i]);
     }
         
 }
