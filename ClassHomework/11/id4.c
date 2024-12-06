@@ -22,6 +22,7 @@ char toLower(char in){
     if(in >= 'A' && in <= 'Z'){
         return 'a' + (in - 'A');
     }
+    return in;
 }
 void convert_Sentence2(char *pStr){
     int index = 0;
