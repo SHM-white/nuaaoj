@@ -27,7 +27,6 @@ void sort(int *nums, int size)
         }
     }
 }
-
 int main()
 {
     int n, b;
