@@ -11,8 +11,10 @@
 
 #define max(a, b) ((a) > (b) ? (a) : (b))
 #define min(a, b) ((a) < (b) ? (a) : (b))
-char toLower(char in){
-    if(in >= 'A' && in <= 'Z'){
+char toLower(char in)
+{
+    if (in >= 'A' && in <= 'Z')
+    {
         return 'a' + (in - 'A');
     }
     return in;
@@ -20,14 +22,13 @@ char toLower(char in){
 
 int main()
 {
-    char text[10240];
-    char c = getchar();
+    char text[102400];
+    char c;
     int index = 0;
-    while (c != '#')
+    while ((c = getchar()) != '#')
     {
         text[index] = c;
         index++;
-        c = getchar();
     }
     int length = index;
     index = 0;
@@ -37,10 +38,7 @@ int main()
         {
 
             if (
-                (toLower(text[index]) == 't') 
-                && toLower(text[index + 1]) == 'h' 
-                && toLower(text[index + 2]) == 'e' 
-                && ((index == length - 3) ? (true) : (!(text[index + 3] >= 'a' && text[index + 3] <= 'z') && !(text[index + 3] >= 'A' && text[index + 3] <= 'Z'))))
+                (index == 0 ? true : (text[index - 1] == ' ')) && toLower(text[index]) == 't' && toLower(text[index + 1]) == 'h' && toLower(text[index + 2]) == 'e' && ((index == length - 3) ? (true) : (!(text[index + 3] >= 'a' && text[index + 3] <= 'z') && !(text[index + 3] >= 'A' && text[index + 3] <= 'Z'))))
             {
                 index += 3;
                 continue;
