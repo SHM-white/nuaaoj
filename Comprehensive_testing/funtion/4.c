@@ -65,5 +65,15 @@ void getSubStr( char *source,
     output[i] = '\0';
 }
 int main(){
+    int minLength;
+    scanf("%d", &minLength);
+    char text[1024];
+    scanf("%s", text);
+
+    int strLen = length(text);
+    for (size_t i = minLength; i < strLen; i++)
+    {
+        
+    }
     
 }
