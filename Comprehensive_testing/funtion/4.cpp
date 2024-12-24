@@ -35,7 +35,7 @@ int main()
     std::cin >> minLength >> text;
     std::map<std::string, int> counter;
     std::vector<std::string> strCache;
-    for (size_t start = 0; start < text.length(); start++)
+    for (size_t start = 0; start < text.length() + 1; start++)
     {
         for (size_t i = minLength; i < text.length() - start + 1; i++)
         {
@@ -52,6 +52,9 @@ int main()
         if (counter[*i] > maxCount)
         {
             maxCount = counter[*i];
+            findedStr = *i;
+        }
+        if(counter[*i] == maxCount && (*i).length() > findedStr.length()){
             findedStr = *i;
         }
     }
